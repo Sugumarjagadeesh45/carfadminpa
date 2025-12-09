@@ -545,6 +545,8 @@ const updateDriverWallet = async (driverId, amount) => {
     }
   };
 
+
+  
   const clearFilters = () => {
     setFilters({
       name: '',
