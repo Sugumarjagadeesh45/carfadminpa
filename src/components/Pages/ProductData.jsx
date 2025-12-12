@@ -58,18 +58,22 @@ function ProductData() {
     fetchCategoriesForDropdown();
   }, []);
 
-  const fetchProducts = async () => {
-    try {
-      setLoading(true);
-      const response = await axios.get(`${API_BASE}/groceries`);
-      setProducts(response.data.data || []);
-    } catch (error) {
-      console.error('Error fetching products:', error);
-      alert('Failed to fetch products');
-    } finally {
-      setLoading(false);
-    }
-  };
+const fetchProducts = async () => {
+  try {
+    setLoading(true);
+    // Try both endpoints
+    const response = await axios.get(`${API_BASE}/groceries`);
+    // OR use the direct endpoint
+    // const response = await axios.get(`${API_BASE}/products/all`);
+    setProducts(response.data.data || []);
+  } catch (error) {
+    console.error('Error fetching products:', error);
+    // Fallback to empty array
+    setProducts([]);
+  } finally {
+    setLoading(false);
+  }
+};
 
   const fetchBanners = async () => {
     try {
