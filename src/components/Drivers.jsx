@@ -9,6 +9,7 @@ import {
   FiUpload, FiClock, FiCreditCard, FiFile, FiCalendar, FiSave
 } from 'react-icons/fi';
 
+
 const Notification = ({ message, type, onClose }) => (
   <div className={`notification notification-${type}`}>
     <div className="notification-content">
