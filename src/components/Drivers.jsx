@@ -21,6 +21,7 @@ const Notification = ({ message, type, onClose }) => (
 
 
 
+
 // Regex patterns for Indian validation
 const mobileRegex = /^[6-9]\d{9}$/;
 const vehicleRegex = /^[A-Z]{2}[0-9]{2}[A-Z]{1,2}[0-9]{4}$/;
